@@ -1,16 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ANALYZE_FOR_ENTRY_COMPONENTS } from '@angular/core';
+import { NgModel, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { SalutoComponent } from './saluto/saluto.component';
+import { from } from 'rxjs';
+import { Injector } from '@angular/core';
+import {createCustomElement } from '@angular/elements';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SalutoComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
-export class AppModule { }
+export class AppModule {
+}
